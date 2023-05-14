@@ -1,0 +1,22 @@
+.btn{
+    text-decoration: none;
+    color: black;
+   
+    
+}
+*{
+    background-color: #7a7a78;
+    
+}
+.container{
+    
+    text-align: center;
+    margin-top: 0px; 
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.salt{
+    width: 50%;
+}
+.message{
+    margin-left: 30%;
+}
