@@ -25,17 +25,7 @@ if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['password']) 
 
   echo "<div class='alert alert-danger p-3'>All fields are required</div>";
 }
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-  array_push($errors, "Email is not valid");
- }
- if (strlen($password)<8) {
-  echo "<div class='alert alert-danger p-3'>Password must be at least 8 charactes long</div>";
- }
- if ($password!==$password_confirm) {
-  echo "<div class='alert alert-danger p-3'>Password does not match.</div>";
- }
-
-
+else{
 
  // Generate a random salt
  $salt = bin2hex(random_bytes(16));
@@ -54,11 +44,20 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
  if(mysqli_num_rows($result) > 0){
 
-  array_push($errors,"Email already exists!");
+  echo "<div class='alert alert-danger p-3'>Email already exists</div>";
 
  }else{
-
-      if(!password_verify($_POST['password'] . $salt, $cpass)){
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+          array_push($errors, "Email is not valid");
+        }
+        if (strlen($password)<8) {
+          echo "<div class='alert alert-danger p-3'>Password must be at least 8 charactes long</div>";
+        }
+        if ($password!==$password_confirm) {
+          echo "<div class='alert alert-danger p-3'>Password does not match.</div>";
+        }
+      
+        if(!password_verify($_POST['password'] . $salt, $cpass)){
          $error[] = 'Password not matched!';
       }else{
         $sql = "INSERT INTO user_form ( name, email, password, salt) VALUES ( ?, ?,?, ?)";
@@ -74,6 +73,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
            }
           };
         };
+      }
  mysqli_close($conn);
 ?>
 
