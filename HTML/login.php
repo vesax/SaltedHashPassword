@@ -73,7 +73,7 @@ mysqli_close($conn);
                         <input type="password" class="form-style" name = "password" placeholder="Password">
                         <i class="input-icon uil uil-lock-alt"></i>
                       </div>
-                     <input type="submit" name="submit" value="Login"></input>
+                     <input class='btn' type="submit" name="submit" value="Login"></input>
                       <p class="signupklasa"><a href="signup.php" class="createacc">Create an account</p>
 
                       <p class="mb-0 mt-4 text-center"><a href="" class="link">Forgot your
