@@ -35,13 +35,13 @@ if(isset($_POST['submit'])){
         $_SESSION["user_form"] = "yes";
         header('location:home.php');
      }else{
-      echo "<div class='alert alert-danger p-3'>Incorrect email or password.</div>";
-     }
+    echo "<div class='alert alert-danger p-3'>Incorrect email or password.</div>";
+    //echo "<div class='alert alert-danger p-3'>All fields are required</div>"; 
+  }
 
   }else{
 
-     $error[] = 'User not found!';
-
+    echo "<div class='alert alert-danger p-3'>User not found!</div>";
   }
 
 };
