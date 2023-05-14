@@ -1,6 +1,6 @@
 # SaltedHash_Application
 ### Windows Aplikacioni me te cilin menaxhohen perdoruesit, ku fjalekalimet ruhen si SaltedHash ne nje Databaze.
-###### Për krijimin e desktop aplikacionit kemi perdorur platformen softuerike JavaFX dhe MySQL Database.
+
 
 
 
