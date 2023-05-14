@@ -10,6 +10,45 @@
 </head>
 <body>
 
+<?php 
+require_once("connectDB.php");
+
+if(isset($_POST['login'])){
+
+
+  $email = mysqli_real_escape_string($conn, $_POST['email']);
+
+  $select = "SELECT * FROM user_form WHERE email = $email";
+
+  $result = mysqli_query($conn, $select);
+
+  if(mysqli_num_rows($result) > 0){
+
+     $user = mysqli_fetch_assoc($result);
+
+     // Verify the password using the stored salt and hashed password
+     $pass = $_POST['password'] . $user['salt'];
+
+     if(password_verify($pass, $user['password'])){
+        // Password matches, log in the user
+        session_start();
+        $_SESSION['email'] = $user['email'];
+        header('location:home.php');
+     }else{
+      echo "<div class='alert alert-danger p-3'>Incorrect email or password.</div>";
+     }
+
+  }else{
+
+     $error[] = 'User not found!';
+
+  }
+
+};
+mysqli_close($conn);
+?>
+
+
 
 
 <from action="" method="POST" >
@@ -27,15 +66,15 @@
                       <h4 class="mb-4 pb-3">Log In
                       </h4>
                       <div class="form-group">
-                        <input type="email" class="form-style" placeholder="Email">
+                        <input type="email" class="form-style" name="email" placeholder="Email">
                         <i class="input-icon uil uil-at"></i>
                       </div>
                       <div class="form-group mt-2">
-                        <input type="password" class="form-style" placeholder="Password">
+                        <input type="password" class="form-style" name = "password" placeholder="Password">
                         <i class="input-icon uil uil-lock-alt"></i>
                       </div>
                       <a href="" class="btn mt-4">Login</a>
-                      <p class="signupklasa"><a href="signup.html">Create an account</p>
+                      <p class="signupklasa"><a href="signup.php">Create an account</p>
                       <p class="mb-0 mt-4 text-center"><a href="" class="link">Forgot your
                           password?</a></p>
                     </div>
