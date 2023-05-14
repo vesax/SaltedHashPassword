@@ -55,10 +55,9 @@ mysqli_close($conn);
   <div class="section">
     <div class="container">
       <div class="row full-height justify-content-center">
-        <div class="col-12 text-center align-self-center py-5">
-          <div class="section pb-5 pt-5 pt-sm-2 text-center">
-            <label for="reg-log"></label>
-            
+        
+          
+            <div class="card-3d-wrap mx-auto">
               <div class="card-3d-wrapper">
                 <div class="card-front">
                   <div class="center-wrap">
@@ -73,7 +72,7 @@ mysqli_close($conn);
                         <input type="password" class="form-style" name = "password" placeholder="Password">
                         <i class="input-icon uil uil-lock-alt"></i>
                       </div>
-                     <input class='btn' type="submit" name="submit" value="Login"></input>
+                     <input type="submit" name="submit" value="Login"></input>
                       <p class="signupklasa"><a href="signup.php" class="createacc">Create an account</p>
 
                       <p class="mb-0 mt-4 text-center"><a href="" class="link">Forgot your
@@ -81,6 +80,7 @@ mysqli_close($conn);
                     </div>
                   </div>
                 </div>
+              </div>
                 
 </form>
 </body>
