@@ -1,5 +1,5 @@
 # SaltedHash_Application
-### Windows Aplikacioni me te cilin menaxhohen perdoruesit, ku fjalekalimet ruhen si SaltedHash ne nje Databaze.
+### Web page me te cilin menaxhohen perdoruesit, ku fjalekalimet ruhen si SaltedHash ne nje Databaze.
 
 
 
