@@ -128,7 +128,7 @@
   color: #bdb9b9;
 }
 .btn:hover{  
-  background-color: #ddd4d4;
+  background-color:#494a4b;
   color: #ffeba7;
   box-shadow: 0 8px 24px 0 rgba(235, 236, 241, 0.2);
 }
@@ -154,6 +154,12 @@
     text-decoration: none;
     color:#000000;
   }
-  .mb-0 {
-    
+  .createacc:hover{
+    text-decoration: none;
+    color: #ffeba7;
   }
+  .link:hover{
+    text-decoration: none;
+    color: #ffeba7;
+  }
+ 

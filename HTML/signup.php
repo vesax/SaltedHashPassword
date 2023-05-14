@@ -29,7 +29,7 @@
             <input type="password" class="form-style" placeholder="Confirm Password" name="confirm_pass">
             <i class="input-icon uil uil-lock-alt"></i>
           </div>
-          <input type="submit" name="submit" value="Signup"></input>
+          <input type="submit" name="submit" value="Sign Up"></input>
           <p class='HaveAnAccount'>Already have an account?<a class="loginbutton"href="login.php"> Login</p>
           
          
