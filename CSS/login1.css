@@ -2,7 +2,7 @@
 .card-front, .card-back {
     width: 100%;
     height: 100%;
-    background-color: #999997;
+    background-color:  #999997;
     position: absolute;
     border-radius: 6px;
     
@@ -19,11 +19,11 @@
     line-height: 22px;
     letter-spacing: 0.5px;
     outline: none;
-    color: #1b1a1a;
+    color:  #1b1a1a;
    background-color: #dfe2fc;
     border: none;
     -webkit-transition: all 200ms linear;
-    transition: all 200ms linear;
+    transition: all  200ms linear;
     /*box-shadow: 0 4px 8px 0 rgba(243, 235, 235, 0.2);*/
   }
   .input-icon {

@@ -5,9 +5,9 @@ session_start();
 if (isset($_POST['logout'])) {
     // Perform any necessary logout actions here
 
-    // Destroy the session and redirect to the login page or any other desired location
+    // Destroy the session and redirect  to  the login page or any other desired location
     session_destroy();
-    header("Location: login.php");
+     header("Location: login.php");
     exit();
 }
 ?>
