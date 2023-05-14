@@ -10,6 +10,7 @@
 </head>
 <body>
     <div class="container">
+
     <?php
      include_once( 'connectDB.php');
 if(isset($_POST['submit'])){
@@ -79,6 +80,10 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
    
         <h4 class="mb-3 pb-3">Sign Up</h4>
         <form action="" method="POST">   
+
+        <h4 class="mb-3 pb-3">Sign Up </h4>
+        <form action="" method="POST">  
+           
           <div class="form-group">
             <input type="text" class="form-style" placeholder="Full Name" name="name">
             <i class="input-icon uil uil-user"></i>
@@ -95,7 +100,11 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             <input type="password" class="form-style" placeholder="Confirm Password" name="confirm_pass">
             <i class="input-icon uil uil-lock-alt"></i>
           </div>
-          <input type="submit" name="submit" value="Signup"></input>
+          <input type="submit" name="submit" value="Sign Up"></input>
+          <p class='HaveAnAccount'>Already have an account?<a class="loginbutton"href="login.php"> Login</p>
+          
+         
         </form>
       </div>
+</body>
 </html>      
