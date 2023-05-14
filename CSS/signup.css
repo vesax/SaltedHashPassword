@@ -2,10 +2,18 @@
     max-width: 500px;
     margin-top: 120px;
     padding: 20px;
-    background-color: #666664;
+    background-color: #999997;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0px 0px 10px #ddd;
+  } 
+  h4{
+    text-align: center;
+  }
+  .HaveAnAccount{
+    text-align: right;
+    font-size: small;
+    margin-top: -5%;
   }
   
   .form-style {
@@ -26,12 +34,15 @@
   
   .input-icon {
     position:fixed;
-    top: 0;
+    margin-top: 14px;
+    margin-left: -445px;
+  
+    /*top: 0;
     left: 160px;
     height: 48px;
     font-size: 24px;
     line-height: 48px;
-    text-align: left;
+    text-align: left;*/
    /* -webkit-transition: all 200ms linear;
     transition: all 200ms linear;*/
   }
@@ -48,9 +59,10 @@
   }
   
   input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #6d6c68;
+    color: #bdb9b9;
     padding: 10px 20px;
+    margin-top: 4.5%;
     margin-left: 37%;
     border: none;
     border-radius: 5px;
@@ -60,6 +72,17 @@
   }
   
   input[type="submit"]:hover {
-    background-color: #0062cc;
+    background-color: #494a4b;
+    color: #ffeba7;
+  box-shadow: 0 8px 24px 0 rgba(235, 236, 241, 0.2);
   }
-  
+  .loginbutton{
+    text-decoration: none;
+    color:#000000;
+
+  }
+  .loginbutton:hover{
+    text-decoration: none;
+    color: #000000;
+
+  }
