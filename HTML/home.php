@@ -21,7 +21,7 @@ if (isset($_POST['logout'])) {
             text-align: center;
             margin-top: 100px;
         }
-        
+
         .logout-button {
             padding: 10px 20px;
             background-color: #ddd;
@@ -42,7 +42,7 @@ if (isset($_POST['logout'])) {
             <h1>Welcome to our project</h1>
             <p>This is a user page</p>
          <button>   <a href="logout.php" class="btn">Log Out </a> </button>
-            
+
         <?php } ?>
     </div>
 </body>
