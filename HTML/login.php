@@ -9,18 +9,18 @@
   <link rel="stylesheet" href="../CSS/login1.css">
 </head>
 <body>
-
+<div class="card-3d-wrap mx-auto">
 <?php 
 require_once("connectDB.php");
 
-if(isset($_POST['login'])){
+if(isset($_POST['submit'])){
 
 
   $email = mysqli_real_escape_string($conn, $_POST['email']);
 
-  $select = "SELECT * FROM user_form WHERE email = $email";
+  $sql = "SELECT * FROM `user_form` WHERE `email` = '$email'";
 
-  $result = mysqli_query($conn, $select);
+  $result = mysqli_query($conn, $sql);
 
   if(mysqli_num_rows($result) > 0){
 
@@ -32,7 +32,7 @@ if(isset($_POST['login'])){
      if(password_verify($pass, $user['password'])){
         // Password matches, log in the user
         session_start();
-        $_SESSION['email'] = $user['email'];
+        $_SESSION["user_form"] = "yes";
         header('location:home.php');
      }else{
       echo "<div class='alert alert-danger p-3'>Incorrect email or password.</div>";
@@ -51,14 +51,14 @@ mysqli_close($conn);
 
 
 
-<from action="" method="POST" >
+<form action="" method="POST" >
   <div class="section">
     <div class="container">
       <div class="row full-height justify-content-center">
         <div class="col-12 text-center align-self-center py-5">
           <div class="section pb-5 pt-5 pt-sm-2 text-center">
             <label for="reg-log"></label>
-            <div class="card-3d-wrap mx-auto">
+            
               <div class="card-3d-wrapper">
                 <div class="card-front">
                   <div class="center-wrap">
@@ -73,8 +73,9 @@ mysqli_close($conn);
                         <input type="password" class="form-style" name = "password" placeholder="Password">
                         <i class="input-icon uil uil-lock-alt"></i>
                       </div>
-                      <a href="" class="btn mt-4">Login</a>
-                      <p class="signupklasa"><a href="signup.php">Create an account</p>
+                     <input type="submit" name="submit" value="Login"></input>
+                      <p class="signupklasa"><a href="signup.php" class="createacc">Create an account</p>
+
                       <p class="mb-0 mt-4 text-center"><a href="" class="link">Forgot your
                           password?</a></p>
                     </div>
