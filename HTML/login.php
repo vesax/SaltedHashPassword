@@ -11,7 +11,7 @@
 <body>
 <?php 
 
-@include 'config.php';
+include_once( 'connectDB.php');
 
 if(isset($_POST['submit'])){
 
@@ -26,7 +26,7 @@ if(isset($_POST['submit'])){
    $pass = password_hash($pass, PASSWORD_BCRYPT);
 
    // Hash the confirm password using the same salt and bcrypt algorithm
-   $cpass = $_POST['cpassword'] . $salt;
+   $cpass = $_POST['confirm_pass'] . $salt;
    $cpass = password_hash($cpass, PASSWORD_BCRYPT);
 
    $select = "SELECT * FROM user_form WHERE email = '$email'";
@@ -44,7 +44,7 @@ if(isset($_POST['submit'])){
       }else{
          $insert = "INSERT INTO user_form(name, email, password, salt) VALUES('$name','$email','$pass', '$salt')";
          mysqli_query($conn, $insert);
-         header('location:login_form.php');
+         header('location:home.php');
       }
    }
 
@@ -53,7 +53,7 @@ if(isset($_POST['submit'])){
 ?>
 
 
-
+<from action="" method="POST" >
   <div class="section">
     <div class="container">
       <div class="row full-height justify-content-center">
@@ -86,7 +86,7 @@ if(isset($_POST['submit'])){
                 <div class="card-back">
                   <div class="center-wrap">
                     <div class="section text-center">
-                     
+</form>
                         <h4 class="mb-3 pb-3">Sign Up</h4>
                       <form action="" method="POST">   
                         <div class="form-group">
