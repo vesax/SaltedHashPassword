@@ -9,6 +9,51 @@
   <link rel="stylesheet" href="../CSS/login.css">
 </head>
 <body>
+<?php 
+
+@include 'config.php';
+
+if(isset($_POST['submit'])){
+
+   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+
+   // Generate a random salt
+   $salt = bin2hex(random_bytes(16));
+
+   // Hash the password using the salt and the bcrypt algorithm
+   $pass = $_POST['password'] . $salt;
+   $pass = password_hash($pass, PASSWORD_BCRYPT);
+
+   // Hash the confirm password using the same salt and bcrypt algorithm
+   $cpass = $_POST['cpassword'] . $salt;
+   $cpass = password_hash($cpass, PASSWORD_BCRYPT);
+
+   $select = "SELECT * FROM user_form WHERE email = '$email'";
+
+   $result = mysqli_query($conn, $select);
+
+   if(mysqli_num_rows($result) > 0){
+
+      $error[] = 'User already exists!';
+
+   }else{
+
+      if(!password_verify($_POST['password'] . $salt, $cpass)){
+         $error[] = 'Password not matched!';
+      }else{
+         $insert = "INSERT INTO user_form(name, email, password, salt) VALUES('$name','$email','$pass', '$salt')";
+         mysqli_query($conn, $insert);
+         header('location:login_form.php');
+      }
+   }
+
+};
+
+?>
+
+
+
   <div class="section">
     <div class="container">
       <div class="row full-height justify-content-center">
@@ -41,25 +86,26 @@
                 <div class="card-back">
                   <div class="center-wrap">
                     <div class="section text-center">
-                      <form action="register.php" method="post">
+                     
                         <h4 class="mb-3 pb-3">Sign Up</h4>
+                      <form action="" method="POST">   
                         <div class="form-group">
                           <input type="text" class="form-style" placeholder="Full Name" name="name">
                           <i class="input-icon uil uil-user"></i>
-                        </div>
-                        <div class="form-group mt-2">
-                          <input type="tel" class="form-style" placeholder="Phone Number" name="phone">
-                          <i class="input-icon uil uil-phone"></i>
                         </div>
                         <div class="form-group mt-2">
                           <input type="email" class="form-style" placeholder="Email" name="email">
                           <i class="input-icon uil uil-at"></i>
                         </div>
                         <div class="form-group mt-2">
-                          <input type="password" class="form-style" placeholder="Password" name="pass">
+                          <input type="password" class="form-style" placeholder="Password" name="password">
                           <i class="input-icon uil uil-lock-alt"></i>
                         </div>
-                        <button type="submit" class="btn mt-4" name="send">Register</button>
+                        <div class="form-group mt-2">
+                          <input type="password" class="form-style" placeholder="Confirm Password" name="confirm_pass">
+                          <i class="input-icon uil uil-lock-alt"></i>
+                        </div>
+                        <input type="submit" name="submit" value="Signup"></input>
                       </form>
                     </div>
                     </form>
