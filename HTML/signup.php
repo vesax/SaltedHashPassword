@@ -77,9 +77,6 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
  mysqli_close($conn);
 ?>
 
-   
-        <h4 class="mb-3 pb-3">Sign Up</h4>
-        <form action="" method="POST">   
 
         <h4 class="mb-3 pb-3">Sign Up </h4>
         <form action="" method="POST">  
