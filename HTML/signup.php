@@ -10,8 +10,9 @@
 </head>
 <body>
     <div class="container">
-        <h4 class="mb-3 pb-3">Sign Up</h4>
-        <form action="" method="POST">   
+        <h4 class="mb-3 pb-3">Sign Up </h4>
+        <form action="" method="POST">  
+           
           <div class="form-group">
             <input type="text" class="form-style" placeholder="Full Name" name="name">
             <i class="input-icon uil uil-user"></i>
@@ -29,6 +30,10 @@
             <i class="input-icon uil uil-lock-alt"></i>
           </div>
           <input type="submit" name="submit" value="Signup"></input>
+          <p class='HaveAnAccount'>Already have an account?<a class="loginbutton"href="login.php"> Login</p>
+          
+         
         </form>
       </div>
+</body>
 </html>      

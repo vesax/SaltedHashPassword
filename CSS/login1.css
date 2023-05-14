@@ -144,5 +144,11 @@
   }
   .signupklasa{
     margin-top: 5%;
-    
+    text-decoration: none;
+    color: #000000;
+
+  }
+  .createacc{
+    text-decoration: none;
+    color:#000000;
   }

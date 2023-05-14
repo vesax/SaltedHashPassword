@@ -35,7 +35,7 @@
                         <i class="input-icon uil uil-lock-alt"></i>
                       </div>
                       <a href="" class="btn mt-4">Login</a>
-                      <p class="signupklasa"><a href="signup.html">Create an account</p>
+                      <p class="signupklasa"><a href="signup.php" class="createacc">Create an account</p>
                       <p class="mb-0 mt-4 text-center"><a href="" class="link">Forgot your
                           password?</a></p>
                     </div>
