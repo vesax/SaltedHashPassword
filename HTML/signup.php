@@ -12,7 +12,7 @@
     <div class="container">
 
     <?php
-     include_once( 'connectDB.php');
+include_once( 'connectDB.php');
 if(isset($_POST['submit'])){
   $name = mysqli_real_escape_string($conn, $_POST['name']);
   $email = mysqli_real_escape_string($conn, $_POST['email']);
