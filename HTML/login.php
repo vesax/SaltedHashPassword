@@ -38,6 +38,7 @@ if(isset($_POST['submit'])){
     echo "<div class='alert alert-danger p-3'>Incorrect email or password.</div>";
     //echo "<div class='alert alert-danger p-3'>All fields are required</div>"; 
   }
+  
 
   }else{
 
