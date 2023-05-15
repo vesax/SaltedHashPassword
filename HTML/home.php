@@ -16,34 +16,27 @@ if (isset($_POST['logout'])) {
 <html>
 <head>
     <title>Welcome Page</title>
-    <style>
-        .container {
-            text-align: center;
-            margin-top: 100px;
-        }
-
-        .logout-button {
-            padding: 10px 20px;
-            background-color: #ddd;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="../CSS/home.css">
+  
+  
 </head>
 <body>
+    <div class="back"></div>
+ <div><img style="width:10%;"src="../images/salt.png">
+</div>
+<p style="margin-right: 15%">
+<img style = " width: 5% ; margin-left:15%" src = "../images/password.png">
+</p>
+    
+   
     <div class="container">
-        <?php if (isset($_SESSION['user_name'])) { ?>
-            <h3>Hi, <span>user</span></h3>
-            <h1>Welcome, <span><?php echo $_SESSION['user_name']; ?></span></h1>
-            <p>This is a student page</p>
-            <a href="logout.php" class="btn">Logout</a>
-        <?php } else { ?>
-            <h3>Hi, <span>user</span></h3>
-            <h1>Welcome to our project</h1>
-            <p>This is a user page</p>
-         <button>   <a href="logout.php" class="btn">Log Out </a> </button>
-
-        <?php } ?>
+            <h1>Welcome Message</h1>
+            <p>This project is implemented by group 33 using HTML,
+                 CSS and PHP for saving your data and especially<br> your password as salted hash</p>
+            <h1></h1>
+         <button>   <a href="login.php" class="btn">Log Out </a> </button>
     </div>
 </body>
 </html>
